@@ -1,0 +1,9 @@
+C:\Users\Don Diego De La Vega\source\repos\Practica1\Enumeraciones\bin\Debug\netstandard2.0\Enumeraciones.deps.json
+C:\Users\Don Diego De La Vega\source\repos\Practica1\Enumeraciones\bin\Debug\netstandard2.0\Enumeraciones.dll
+C:\Users\Don Diego De La Vega\source\repos\Practica1\Enumeraciones\bin\Debug\netstandard2.0\Enumeraciones.pdb
+C:\Users\Don Diego De La Vega\source\repos\Practica1\Enumeraciones\obj\Debug\netstandard2.0\Enumeraciones.AssemblyInfoInputs.cache
+C:\Users\Don Diego De La Vega\source\repos\Practica1\Enumeraciones\obj\Debug\netstandard2.0\Enumeraciones.AssemblyInfo.cs
+C:\Users\Don Diego De La Vega\source\repos\Practica1\Enumeraciones\obj\Debug\netstandard2.0\Enumeraciones.csproj.CoreCompileInputs.cache
+C:\Users\Don Diego De La Vega\source\repos\Practica1\Enumeraciones\obj\Debug\netstandard2.0\Enumeraciones.dll
+C:\Users\Don Diego De La Vega\source\repos\Practica1\Enumeraciones\obj\Debug\netstandard2.0\Enumeraciones.pdb
+C:\Users\Don Diego De La Vega\source\repos\Practica1\Enumeraciones\obj\Debug\netstandard2.0\Enumeraciones.csprojAssemblyReference.cache

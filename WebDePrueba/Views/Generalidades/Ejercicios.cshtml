@@ -1,0 +1,167 @@
+﻿<style>
+    .bd-callout {
+        padding: 1.25rem;
+        margin-top: 1.25rem;
+        margin-bottom: 1.25rem;
+        border: 1px solid #eee;
+        border-left-color: rgb(238, 238, 238);
+        border-left-width: 1px;
+        border-left-width: .25rem;
+        border-radius: .25rem;
+    }
+
+    .bd-callout-primary {
+        border-left-color: #0056b3;
+    }
+
+    .text-monospace {
+        padding: 10px;
+        background-color: #f4f4f4;
+    }
+
+    h6 {
+        font-weight: bold;
+        font-size: 17px;
+    }
+</style>
+
+<div class="jumbotron">
+    <h1>EJERCICIOS  GENERALES</h1>
+    <p class="mt-4 lead">A continuación se muestran los diferentes ejercicios de las enumeraciones</p>
+
+</div>
+
+<div class="bd-callout bd-callout-primary">
+    <h6>Ejercicio 1</h6>
+    Crear una función que devuelva la suma de dos números recibidos por parámetros
+
+    <form class="mt-3" action="/Generalidades/Ejercicio1" method="get">
+        <div class="form-group">
+            <input class="form-control" type="number" name="numero1" value="" placeholder="Ingrese un numero" required />
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="number" name="numero2" value="" placeholder="Ingrese un numero" required />
+        </div>
+        <button class="btn btn-primary" type="submit">Enviar</button>
+    </form>
+    <p class="mt-3">
+        Resultado: @{
+            if (@ViewBag.Suma == null)
+            {
+                <span> No ha realizado ninguna suma aún.</span>
+            }
+        } @ViewBag.Suma
+    </p>
+
+    <p class="text-monospace text-success" style="font-size:13px;">
+
+        //RESOLUCIÓN <br />
+
+        public static int SumarDosNumeros(int numero1, int numero2)<br />
+        {<br />
+        int suma = numero1 + numero2;<br />
+        return suma;<br />
+        }<br />
+
+    </p>
+</div>
+<div class="bd-callout bd-callout-primary">
+    <h6>Ejercicio 2</h6>
+    Crear una función que reciba una cadena de 8 caracteres y retorne en el mismo parámetro
+    la cadena cortada de izquierda a derecha en 4 caracteres.
+
+
+    <form class="mt-3" action="/Generalidades/Ejercicio2" method="get">
+        <div class="form-group">
+
+            <input class="form-control" type="text" name="cadena" value="" placeholder="Ingrese un texto" maxlength="8" minlength="8" required />
+        </div>
+        <button class="btn btn-primary" type="submit">Cortar</button>
+    </form>
+    <p class="mt-3">
+        Cadena cortada:
+
+        @{
+            if (@ViewBag.Cadena == null)
+            {
+                <span> No ha cortado ningun texto/cadena aún.</span>
+            }
+        } @ViewBag.Cadena
+    </p>
+
+    <p class="text-monospace text-success" style="font-size:13px;">
+
+        //RESOLUCIÓN <br />
+
+        public static void CortarCadena(ref string cadena)<br />
+        {                  <br />
+        cadena = cadena.Substring(0, 4);<br />
+        }<br />
+
+    </p>
+
+</div>
+<div class="bd-callout bd-callout-primary">
+    <h6>Ejercicio 3</h6>
+
+    Crear una función que devuelva la fecha y hora actual
+
+    <p class="mt-3"><a class="btn btn-primary" href="/Generalidades/Ejercicio3">Obtener fecha actual</a></p>
+    <p class="">
+        Fecha actual:
+
+        @{
+            if (@ViewBag.Fecha == null)
+            {
+                <span> No ha solicitado la fecha actual aún.</span>
+            }
+        } @ViewBag.Fecha
+    </p>
+
+    <p class="text-monospace text-success" style="font-size:13px;">
+
+        //RESOLUCIÓN<br />
+        public static string ObtenerFechaActual() <br />
+        {<br />
+        string fecha = DateTime.Now.ToString();<br />
+        return fecha;<br />
+        }<br />
+
+    </p>
+
+</div>
+<div class="bd-callout bd-callout-primary">
+    <h6>Ejercicio 4</h6>
+
+    Escribir un comentario con //
+
+    <p class="mt-3 text-monospace text-success" style="font-size:13px;">
+
+
+
+        //Esto es un comentario de linea
+
+    </p>
+</div>
+<div class="bd-callout bd-callout-primary">
+    <h6>Ejercicio 5</h6>
+    Escribir un comentario con /*   */
+
+    <p class="mt-3 text-monospace text-success" style="font-size:13px;">
+
+        /*
+        Esto es un comentario de bloque.
+        */
+    </p>
+
+</div>
+
+<script>
+    window.onload = function () {
+        var pos = window.name || 0;
+        window.scrollTo(0, pos);
+    }
+    window.onunload = function () {
+        window.name = self.pageYOffset || (document.documentElement.scrollTop + document.body.scrollTop);
+    }
+</script>

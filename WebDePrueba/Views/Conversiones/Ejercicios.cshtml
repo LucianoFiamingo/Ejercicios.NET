@@ -1,0 +1,300 @@
+﻿<style>
+    .bd-callout {
+        padding: 1.25rem;
+        margin-top: 1.25rem;
+        margin-bottom: 1.25rem;
+        border: 1px solid #eee;
+        border-left-color: rgb(238, 238, 238);
+        border-left-width: 1px;
+        border-left-width: .25rem;
+        border-radius: .25rem;
+    }
+
+    .bd-callout-primary {
+        border-left-color: #0056b3;
+    }
+
+    .text-monospace {
+        padding: 10px;
+        background-color: #f4f4f4;
+    }
+
+    h6 {
+        font-weight: bold;
+        font-size: 17px;
+    }
+</style>
+@using Conversiones
+
+@model List<Resultado>
+
+<div class="jumbotron">
+    <h1>EJERCICIOS DE CONVERSIONES</h1>
+    <p class="mt-4 lead">A continuación se muestran los diferentes ejercicios sobre conversiones</p>
+</div>
+
+<div class="bd-callout bd-callout-primary">
+    <h6>Ejercicio 1</h6>
+    Realizar la conversión de true, false, 1 y 0 utilizando los métodos Convert., bool.Parse y bool.TryParse.
+    Explique cómo responde en cada caso cada uno de los métodos indicados.
+
+    @{
+        if (Model == null)
+        {
+            <p class="mt-3"><a href="/Conversiones/Ejercicio1" class="btn btn-primary">Ver conversiones</a></p>
+        }
+        else
+        {
+            int loop = 0;
+            foreach (var item in Model)
+            {
+                if (loop == 0 || loop == 3 || loop == 6 || loop == 9)
+                { <p class="mt-3 p-3 bg-primary text-light">Caso: "@item.Nombre"</p> }
+            loop++;
+            <p class="mt-3 text-monospace" style="font-size:13px;">
+
+                Método de conversión:  @item.Conversion.ToString() <br />
+
+                Valor después de convertir:  @item.Valor.ToString() (@item.Mensaje.ToString())
+            </p>
+
+
+        }
+    }
+    }
+
+    <p class="mt-3 text-monospace text-success" style="font-size:13px;">
+
+        //RESOLUCIÓN <br />
+        <br /> public static List<Resultado>
+            <br /> ListarConversiones(string variable)
+            <br />  {
+            <br /> List<Resultado>
+                <br /> lista = new List<Resultado>
+                    ();
+                    <br />
+                    <br />     lista.Add(ConvertirConParse(variable));
+                    <br />     lista.Add(ConvertirConTryParse(variable));
+                    <br />     lista.Add(ConvertirConConvert(variable));
+                    <br />
+                    <br />     return lista;
+                    <br />}
+                    <br />
+                    <br />public static Resultado ConvertirConParse(string variable)
+                    <br />     {
+                    <br />     Resultado resultado = new Resultado();
+                    <br />     resultado.Nombre = variable;
+                    <br />     resultado.Mensaje = "Se logró convertir";
+                    <br />     try
+                    <br />     {
+                    <br />     resultado.Valor = bool.Parse(variable);
+                    <br />     }
+                    <br />     catch
+                    <br />     {
+                    <br />     resultado.Mensaje = "No se logró convertir";
+                    <br />     }
+                    <br />     resultado.Conversion = "Parse";
+                    <br />
+                    <br />     return resultado;
+                    <br />     }
+                    <br />
+                    <br />public static Resultado ConvertirConTryParse(string variable)
+                    <br />     {
+                    <br />     bool conversion = bool.TryParse(variable, out bool result);
+                    <br />     Resultado resultado = new Resultado(variable, result);
+                    <br />     if (conversion)
+                    <br />     {
+                    <br />     resultado.Mensaje = "Se logró convertir";
+                    <br />     }
+                    <br />     else
+                    <br />     {
+                    <br />     resultado.Mensaje = "No se logró convertir";
+                    <br />     }
+                    <br />     resultado.Conversion = "TryParse";
+                    <br />     return resultado;
+                    <br />     }
+                    <br />
+                    <br />     public static Resultado ConvertirConConvert(string variable)
+                    <br />     {
+                    <br />     Resultado resultado = new Resultado();
+                    <br />     resultado.Nombre = variable;
+                    <br />     resultado.Mensaje = "Se logró convertir";
+                    <br />     try
+                    <br />     {
+                    <br />     resultado.Valor = bool.Parse(variable);
+                    <br />     }
+                    <br />     catch
+                    <br />     {
+                    <br />     resultado.Mensaje = "No se logró convertir";
+                    <br />     }
+                    <br />     resultado.Conversion = "Convert";
+                    <br />
+                    <br />     return resultado;
+                    <br />     }
+    </p>
+
+</div>
+<div class="bd-callout bd-callout-primary">
+    <h6>Ejercicio 2</h6>
+    Explique que sucede en los siguientes intentos de casteos de datos.
+
+    @{
+        if (@ViewBag.B == null)
+        {
+            <p class="mt-3"><a href="/Conversiones/Ejercicio2" class="btn btn-primary">Ver casteos</a></p>
+        }
+        else
+        {
+            <p class="mt-3 text-monospace text-success" style="font-size:13px;">
+                a) int a = (int)344.4;
+                <br />Conversión: @ViewBag.A
+                <br />Al hacer esta conversión se asumen los riegos de perder datos, como es el caso convertido en donde se perdieron los decimales.
+            </p>
+            <p class="mt-3 text-monospace text-success" style="font-size:13px;">
+                b) decimal a = 10;
+                <br />Conversión: @ViewBag.B
+
+            </p>
+            <p class="mt-3 text-monospace text-success" style="font-size:13px;">
+                c) int a=443444;
+                <br />Conversión: @ViewBag.C
+
+            </p>
+            <p class="mt-3 text-monospace text-success" style="font-size:13px;">
+                d) short b = (short)a;
+                <br />Conversión: @ViewBag.D
+
+            </p>
+        }
+    }
+
+</div>
+
+<div class="bd-callout bd-callout-primary">
+    <h6>Ejercicio 3</h6>
+    Escriba una sentencia switch utilizando una enumeración con 3 colores (blanco, azul y negro) y para cada caso indicar un mensaje de cual es el color informado.
+
+    <p class="mt-3 text-monospace text-success" style="font-size:13px;">
+
+
+        //RESOLUCIÓN <br />
+
+        <br />public enum Color
+        <br />{
+        <br />Blanco = 1,
+        <br />Azul = 2,
+        <br />Negro = 3
+        <br />
+        <br />}
+        <br />
+        <br />public static string ObtenerDescripcionColor(Color color)
+        <br />{
+        <br />switch (color)
+        <br />{
+        <br />case Color.Blanco:
+        <br />return "Blanco";
+        <br />case Color.Azul:
+        <br />return "Azul";
+        <br />case Color.Negro:
+        <br />return "Negro";
+        <br />default:
+        <br />return "Vacio";
+        <br />}
+        <br />}
+    </p>
+</div>
+<div class="bd-callout bd-callout-primary">
+    <h6>Ejercicio 4</h6>
+    Si se tiene una variable entera a, realice una sentencia if para evaluar si la variable a es mayor a 10. Si es verdad, mostrar un mensaje indicando que el valor es mayor a 10.
+
+    <form class="mt-3" action="/Conversiones/Ejercicio4" method="get">
+        <div class="form-group">
+            <input class="form-control" type="number" name="a" value="" placeholder="Ingrese un numero" required />
+        </div>
+        <button class="btn btn-primary" type="submit">Enviar</button>
+    </form>
+
+    <div class="mt-3">
+        @ViewBag.Mensaje
+    </div>
+    <p class="mt-3 text-monospace text-success" style="font-size:13px;">
+
+        //RESOLUCIÓN <br />
+        <br />string mensaje = "";
+        <br />
+        <br />     if (a > 10)
+        <br />     {
+        <br />         mensaje = "Es mayor a 10!";
+        <br />     }
+
+    </p>
+</div>
+<div class="bd-callout bd-callout-primary">
+    <h6>Ejercicio 5</h6>
+    Al ejercicio del punto 4), agregar la sentencia de else y, en ella, indicar un mensaje de error.
+
+    <form class="mt-3" action="/Conversiones/Ejercicio5" method="get">
+        <div class="form-group">
+            <input class="form-control" type="number" name="a" value="" placeholder="Ingrese un numero" required />
+        </div>
+        <button class="btn btn-primary" type="submit">Enviar</button>
+    </form>
+
+    <div class="mt-3">
+        @ViewBag.Mensaje2
+    </div>
+
+    <p class="mt-3 text-monospace text-success" style="font-size:13px;">
+
+        //RESOLUCIÓN <br />
+        <br />string mensaje;
+        <br />
+        <br />     if (a > 10)
+        <br />     {
+        <br />         mensaje = "Es mayor a 10!";
+        <br />     }
+        <br />     else {
+        <br />         mensaje = "Error, no es mayor a diez";
+        <br />     }
+
+    </p>
+</div>
+<div class="bd-callout bd-callout-primary">
+    <h6>Ejercicio6</h6>
+    ¿Cuál es la diferencia entre la sentencia for y foreach? Cuándo se debe utilizar cada una de ellas?
+
+    <p class="mt-3 " style="font-size:13px;">
+
+
+        El for es un bucle en el que el desarrollador define las veces que el mismo se va a repetir, mientras que el foreach responde
+        a la lista que se quiera recorrer.
+        <br /> Para recorrer cadenas de texto se debe usar el for.
+        <br />  El foreach generalmente resulta más sencillo dado que no se debe aclarar el indice para acceder a cada elemento ni el tamaño
+        de la lista a recorrer.
+    </p>
+</div>
+<div class="bd-callout bd-callout-primary">
+    <h6>Ejercicio 7</h6>
+    Defina una variable a que en cada ciclo de una sentencia while incremente su valor en 5. Cuando la variable a exceda el valor de 50,
+    el ciclo while debe finalizar.
+
+    <p class="mt-3 text-monospace text-success" style="font-size:13px;">
+
+        //RESOLUCIÓN <br />
+
+        while (a < 50) {
+        a=+ 5;
+        }
+    </p>
+</div>
+
+
+<script>
+    window.onload = function () {
+        var pos = window.name || 0;
+        window.scrollTo(0, pos);
+    }
+    window.onunload = function () {
+        window.name = self.pageYOffset || (document.documentElement.scrollTop + document.body.scrollTop);
+    }
+</script>

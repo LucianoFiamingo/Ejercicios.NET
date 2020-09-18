@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "7DUFR5EU4L8gFwY1FvATCa6v26zhajiNpJOhoZctMSJa4v8fyOdQoFGZ2KKN1s0If5yV1+TVLcA6Q2A0L6kGrQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Don Diego De La Vega\\source\\repos\\Practica1\\Ejercicios\\Conversiones.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Don Diego De La Vega\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Don Diego De La Vega\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

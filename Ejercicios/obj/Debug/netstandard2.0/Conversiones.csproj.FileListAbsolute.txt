@@ -1,0 +1,9 @@
+C:\Users\Don Diego De La Vega\source\repos\Practica1\Ejercicios\bin\Debug\netstandard2.0\Conversiones.deps.json
+C:\Users\Don Diego De La Vega\source\repos\Practica1\Ejercicios\bin\Debug\netstandard2.0\Conversiones.dll
+C:\Users\Don Diego De La Vega\source\repos\Practica1\Ejercicios\bin\Debug\netstandard2.0\Conversiones.pdb
+C:\Users\Don Diego De La Vega\source\repos\Practica1\Ejercicios\obj\Debug\netstandard2.0\Conversiones.csprojAssemblyReference.cache
+C:\Users\Don Diego De La Vega\source\repos\Practica1\Ejercicios\obj\Debug\netstandard2.0\Conversiones.AssemblyInfoInputs.cache
+C:\Users\Don Diego De La Vega\source\repos\Practica1\Ejercicios\obj\Debug\netstandard2.0\Conversiones.AssemblyInfo.cs
+C:\Users\Don Diego De La Vega\source\repos\Practica1\Ejercicios\obj\Debug\netstandard2.0\Conversiones.csproj.CoreCompileInputs.cache
+C:\Users\Don Diego De La Vega\source\repos\Practica1\Ejercicios\obj\Debug\netstandard2.0\Conversiones.dll
+C:\Users\Don Diego De La Vega\source\repos\Practica1\Ejercicios\obj\Debug\netstandard2.0\Conversiones.pdb

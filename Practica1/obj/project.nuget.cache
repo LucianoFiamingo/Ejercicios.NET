@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Zo2GDemSYdPaCyH5i5RAQiey7nKd6LDBfCXeld+UbPo2DeDGmHKFk3D1ZcHIjqZqnS7nwIqzc1SGZ4y5GuN3oQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Don Diego De La Vega\\source\\repos\\Practica1\\Practica1\\Generalidades.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Don Diego De La Vega\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Don Diego De La Vega\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

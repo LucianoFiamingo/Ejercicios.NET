@@ -1,0 +1,133 @@
+﻿<style>
+    .bd-callout {
+        padding: 1.25rem;
+        margin-top: 1.25rem;
+        margin-bottom: 1.25rem;
+        border: 1px solid #eee;
+        border-left-color: rgb(238, 238, 238);
+        border-left-width: 1px;
+        border-left-width: .25rem;
+        border-radius: .25rem;
+    }
+
+    .bd-callout-primary {
+        border-left-color: #0056b3;
+    }
+
+    .text-monospace {
+        padding: 10px;
+        background-color: #f4f4f4;
+    }
+
+    h6 {
+        font-weight: bold;
+        font-size: 17px;
+    }
+</style>
+
+<div class="jumbotron">
+    <h1>EJERCICIOS DE ENUMERACIONES</h1>
+    <p class="mt-4 lead">A continuación se muestran los diferentes ejercicios sobre las enumeraciones</p>
+</div>
+
+<div class="bd-callout bd-callout-primary">
+    <h6>Ejercicio 1</h6>
+    <p>
+        1) Crear una enumeración con los días de la semana, comenzando por Domingo con valor 1.
+    </p>
+
+    <p class="text-monospace text-success" style="font-size:13px;">
+
+        //RESOLUCIÓN <br />
+        public enum DiasDeLaSemana<br />
+        {<br />
+        Domingo = 1,
+        Lunes = 2,
+        Martes = 3,
+        Miercoles = 4,
+        Jueves = 5,
+        Viernes = 6,
+        Sabados = 7<br />
+        }
+    </p>
+</div>
+<div class="bd-callout bd-callout-primary">
+    <h6>Ejercicio 2</h6>
+    <p>
+        2) Agregar a la enumeración la posibilidad de Imprimir un Texto por cada día de la semana
+    </p>
+
+    <p class="text-monospace text-success" style="font-size:13px;">
+
+        //RESOLUCIÓN <br />
+        public static string ObtenerDiasDeLaSemana(DiasDeLaSemana diaDeLaSemana)<br />
+        {<br />
+        switch (diaDeLaSemana)<br />
+        {<br />
+        case DiasDeLaSemana.Domingo:<br />
+        return "Domingo";<br />
+        case DiasDeLaSemana.Lunes:<br />
+        return "Lunes";<br />
+        case DiasDeLaSemana.Martes:<br />
+        return "Martes";<br />
+        case DiasDeLaSemana.Miercoles:<br />
+        return "Miércoles";<br />
+        case DiasDeLaSemana.Jueves:<br />
+        return "Jueves";<br />
+        case DiasDeLaSemana.Viernes:<br />
+        return "Viernes";<br />
+        case DiasDeLaSemana.Sabados:<br />
+        return "Sábado";<br />
+        default:<br />
+        return "Vacio";<br />
+        }<br />
+        }<br />
+
+    </p>
+</div>
+
+<div class="bd-callout bd-callout-primary">
+
+    <h6>Ejercicio de práctica:</h6>
+
+    <p>3) Devolver el dia de la semana a partir de un número aleatorio:</p>
+
+    <a class="btn btn-primary" href="/Enumeraciones/DiaDeLaSemana">Ver día de la semana</a>
+
+    <p class="mt-4">
+        Nombre de dia de la semana aleatorio:
+        @{
+            if (@ViewBag.NombreDia == null)
+            {
+                <span class="text-danger"> Toque el botón para ver un día aleatorio.</span>
+            }
+        }
+        <span class="bg-success p-2 text-light rounded">
+            @ViewBag.NombreDia
+        </span>
+    </p>
+
+    <p class="text-monospace text-success" style="font-size:13px;">
+
+        //RESOLUCIÓN <br />
+        public ActionResult DiaDeLaSemana() <br />
+        {<br />
+        Random ran = new Random(DateTime.Now.Millisecond);<br />
+        int dia = ran.Next(1, 8);<br />
+        string nombreDia = EjercicioEnumeraciones.ObtenerDiasDeLaSemana((EjercicioEnumeraciones.DiaDeLaSemana)dia);<br />
+        ViewBag.NombreDia = nombreDia;<br />
+        return View("Ejercicios");<br />
+        }<br />
+    </p>
+
+</div>
+
+<script>
+    window.onload = function () {
+        var pos = window.name || 0;
+        window.scrollTo(0, pos);
+    }
+    window.onunload = function () {
+        window.name = self.pageYOffset || (document.documentElement.scrollTop + document.body.scrollTop);
+    }
+</script>
